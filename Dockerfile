@@ -6,7 +6,7 @@ FROM docker.io/alpine:latest
 ARG TARGETARCH
 
 # target the latest php version in alpine
-ARG PHP_VERSION="82"
+ARG PHP_VERSION="84"
 
 RUN \
   # dynamic S6ARCH based on https://github.com/BretFisher/multi-platform-docker-build
@@ -18,7 +18,6 @@ RUN \
   apk --no-cache add \
     curl \
     nginx \
-    php${PHP_VERSION}-brotli \
     php${PHP_VERSION}-cli \
     php${PHP_VERSION}-ctype \
     php${PHP_VERSION}-curl \
@@ -40,6 +39,7 @@ RUN \
     php${PHP_VERSION}-pdo_pgsql \
     php${PHP_VERSION}-pdo_sqlite \
     php${PHP_VERSION}-pecl-apcu \
+    php${PHP_VERSION}-pecl-brotli \
     php${PHP_VERSION}-pecl-imagick \
     php${PHP_VERSION}-pecl-lzf \
     php${PHP_VERSION}-pecl-redis \

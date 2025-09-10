@@ -1,12 +1,10 @@
-version: '3'
-
 services:
   nginx-phpfpm:
     build:
       args:
         - TARGETARCH=amd64
       context: .
-    image: localhost/alpine-nginx-phpfpm
+    image: localhost/alpine-nginx-phpfpm:latest
     ports:
       - 8080:80
     volumes:
