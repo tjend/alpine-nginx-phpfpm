@@ -1,5 +1,5 @@
 services:
-  nginx-phpfpm:
+  app:
     build:
       args:
         - TARGETARCH=amd64
@@ -9,3 +9,4 @@ services:
       - 8080:80
     volumes:
       - ./php:/var/www
+    working_dir: /var/www
